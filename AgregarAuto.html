@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveStar - Agregar Auto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header .logo span {
+            color: #FFD700;
+            margin-right: 5px;
+        }
+
+        .nav-bar {
+            display: flex;
+            background-color: #ff6600;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: left;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .container input,
+        .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .container input:focus,
+        .container textarea:focus {
+            border-color: orange;
+        }
+
+        .container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: orange;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            width: 100%;
+        }
+
+        .container button:hover {
+            transform: scale(1.05);
+            background-color: #cc7700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="logo">
+            <span>★</span>DRIVESTAR - Agregar Auto
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <div class="nav-bar">
+        <a href="Empleado.html">Regresar</a>
+        <a href="Login.html">Cerrar Sesión</a>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h1>Agregar Nuevo Auto</h1>
+        <form id="addCarForm" action="add_car.php" method="POST">
+            <label for="nombre">Nombre del Auto</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ejemplo: Toyota Corolla" required>
+
+            <label for="modelo">Modelo</label>
+            <input type="text" id="modelo" name="modelo" placeholder="Ejemplo: 2024" required>
+
+            <label for="precio">Precio</label>
+            <input type="number" id="precio" name="precio" placeholder="Ejemplo: 25000" required>
+
+            <label for="imagen">URL de Imagen</label>
+            <input type="url" id="imagen" name="imagen" placeholder="Ejemplo: https://via.placeholder.com/200" required>
+
+            <button type="submit">Agregar Auto</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveStar - Empleado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .logo-star {
+            color: #FFD700;
+        }
+
+        .profile-icon {
+            position: absolute;
+            right: 20px;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .nav-bar {
+            display: flex;
+            background-color: #ff6600;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .car-list {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex: 3;
+            overflow-y: auto;
+            height: 600px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .car-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .car-card:hover {
+            transform: scale(1.05);
+        }
+
+        .car-card img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .next-appointments {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            overflow-y: auto;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .appointment-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .appointment-card:hover {
+            transform: scale(1.05);
+        }
+
+        .appointment-card img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .add-car-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-car-button:hover {
+            background-color: #0056b3;
+        }
+
+        .logout-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #cc0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .logout-button:hover {
+            background-color: #990000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-star">★</span>DRIVESTAR - Empleado
+        </div>
+        <div class="profile-icon">
+            <img src="https://via.placeholder.com/40" alt="Icono de perfil">
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <div class="nav-bar">
+        <a href="index.html">Inicio</a>
+        <a href="Cliente.html">Cliente</a>
+        <a href="Empleado.html">Empleado</a>
+        <a href="Login.html">Cerrar Sesión</a>
+    </div>
+
+    <!-- Botón para agregar auto -->
+    <div style="text-align: center;">
+        <a href="AgregarAuto.html" class="add-car-button">Agregar Nuevo Auto</a>
+    </div>
+
+    <!-- Contenedor principal -->
+    <main class="container">
+        <!-- Sección izquierda: Compras realizadas -->
+        <section class="car-list">
+            <div class="car-card">
+                <img src="https://via.placeholder.com/200" alt="Sedan 1">
+                <h3>Sedan 1</h3>
+                <p>Modelo, Precio y Cliente</p>
+            </div>
+            <div class="car-card">
+                <img src="https://via.placeholder.com/200" alt="SUV 1">
+                <h3>SUV 1</h3>
+                <p>Modelo, Precio y Cliente</p>
+            </div>
+            <!-- Añadir más autos aquí -->
+        </section>
+
+        <!-- Sección derecha: Próximas citas -->
+        <section class="next-appointments">
+            <h2>Próximas Citas</h2>
+            <div class="appointment-card">
+                <img src="https://via.placeholder.com/200" alt="Auto 1">
+                <h3>Auto 1</h3>
+                <p>Cliente: Juan Pérez</p>
+                <p>Fecha: 25/11/2024</p>
+            </div>
+            <div class="appointment-card">
+                <img src="https://via.placeholder.com/200" alt="Auto 2">
+                <h3>Auto 2</h3>
+                <p>Cliente: María López</p>
+                <p>Fecha: 26/11/2024</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón de cerrar sesión -->
+    <div style="text-align: center; margin: 20px;">
+        <a href="Login.html" class="logout-button">Cerrar Sesión</a>
+    </div>
+</body>
+</html>
